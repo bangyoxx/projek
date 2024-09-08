@@ -1,0 +1,70 @@
+
+### 1. **Pastikan XAMPP/WAMP/MAMP Terinstal**
+Jika Anda menggunakan XAMPP, WAMP, atau MAMP, pastikan sudah terinstal di PC Anda. MySQL biasanya sudah termasuk dalam paket ini.
+
+### 2. **Jalankan MySQL Server**
+Jika Anda menggunakan XAMPP:
+1. Buka XAMPP Control Panel.
+2. Klik tombol **Start** pada bagian **MySQL** untuk menjalankan server MySQL.
+
+Jika menggunakan WAMP atau MAMP, prosesnya hampir sama: buka panel kontrolnya dan jalankan MySQL server.
+
+### 3. **Akses MySQL Melalui Command Prompt**
+Berikut langkah-langkahnya:
+
+1. **Buka Command Prompt:**
+   - Tekan `Windows + R`, ketik `cmd`, lalu tekan `Enter`.
+
+2. **Navigasi ke Direktori MySQL:**
+   - Jika Anda menggunakan XAMPP, biasanya MySQL berada di direktori `C:\xampp\mysql\bin`. Gunakan perintah berikut untuk berpindah ke direktori tersebut:
+     ```bash
+     cd C:\xampp\mysql\bin
+     ```
+
+   - Jika menggunakan WAMP, jalurnya mungkin di `C:\wamp64\bin\mysql\mysqlx.x.x\bin`.
+
+3. **Masuk ke MySQL:**
+   - Untuk masuk ke MySQL, ketikkan perintah berikut:
+     ```bash
+     mysql -u root -p
+     ```
+   - `-u root` menunjukkan bahwa Anda ingin masuk sebagai user `root`.
+   - `-p` berarti Anda akan diminta untuk memasukkan password. (Biasanya password default untuk `root` kosong pada XAMPP, jadi Anda bisa langsung tekan `Enter`).
+
+4. **Bekerja di MySQL:**
+   - Sekarang Anda sudah berada di prompt MySQL, dan bisa mulai mengetikkan perintah SQL seperti `CREATE DATABASE`, `USE`, `CREATE TABLE`, `INSERT`, dll.
+
+### 4. **Contoh Perintah MySQL**
+Sebagai contoh, berikut adalah beberapa perintah dasar yang bisa Anda coba:
+
+- **Membuat database baru:**
+  ```sql
+  CREATE DATABASE test_db;
+  ```
+
+- **Menggunakan database tersebut:**
+  ```sql
+  USE test_db;
+  ```
+
+- **Membuat tabel:**
+  ```sql
+  CREATE TABLE users (
+      id INT AUTO_INCREMENT PRIMARY KEY,
+      username VARCHAR(50),
+      password VARCHAR(255)
+  );
+  ```
+
+- **Menambahkan data ke tabel:**
+  ```sql
+  INSERT INTO users (username, password) VALUES ('user1', MD5('password123'));
+  ```
+
+- **Melihat data dalam tabel:**
+  ```sql
+  SELECT * FROM users;
+  ```
+
+### 5. **Keluar dari MySQL**
+Untuk keluar dari MySQL, ketik `exit` dan tekan `Enter`.
